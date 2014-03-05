@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Roles";
+}
+
+<div id="RolesContainer"></div>
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+        $('#RolesContainer').jtable({
+            title: 'Roles',
+            actions: {
+                listAction: '@Url.Action("RolesList")',
+                deleteAction: '@Url.Action("DeleteRole")',
+                updateAction: '@Url.Action("UpdateRole")',
+                createAction: '@Url.Action("CreateRole")'
+            },
+            fields: {
+                RoleId: {
+                    key: true,
+                    create: false,
+                    edit: false,
+                    list: false
+                },
+
+                RoleName: {
+                    title: 'Role',
+                    width: '12%'
+
+                }
+            }
+        });
+
+        //Load role list from server
+        $('#RolesContainer').jtable('load');
+
+    });
+
+</script>

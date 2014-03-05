@@ -1,0 +1,57 @@
+﻿@model BenchRockers.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Employee</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Role)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Role)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Account)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Account)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TotalExp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TotalExp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Location)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsOnBench)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsOnBench)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.EmpId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Skills";
+}
+<div id="SkillsContainer"></div>
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+        $('#SkillsContainer').jtable({
+            title: 'Skills',
+            actions: {
+                listAction: '@Url.Action("SkillsList")',
+                deleteAction: '@Url.Action("DeleteSkill")',
+                updateAction: '@Url.Action("UpdateSkill")',
+                createAction: '@Url.Action("CreateSkill")'
+            },
+            fields: {
+                SkillId: {
+                    key: true,
+                    create: false,
+                    edit: false,
+                    list: false
+                },
+
+                Name: {
+                    title: 'SkillName',
+                    width: '12%'
+
+                }
+            }
+        });
+
+        //Load skills list from server
+        $('#SkillsContainer').jtable('load');
+
+    });
+
+</script>
+

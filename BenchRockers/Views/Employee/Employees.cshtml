@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Employees";
+}
+
+<div id="EmployeeTableContainer">
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#EmployeeTableContainer').jtable({
+            title: 'Employee List',
+            paging: true,
+            pageSize: 10,
+            sorting: true,
+            defaultSorting: 'Name ASC',
+            actions: {
+                listAction: '@Url.Action("EmployeeList")',
+                deleteAction: '@Url.Action("DeleteEmployee")',
+                updateAction: '@Url.Action("UpdateEmployee")',
+                createAction: '@Url.Action("CreateEmployee")'
+            },
+            fields: {
+                EmpId: {
+                    key: true,
+                    create: false,
+                    edit: false,
+                    list: false
+                },
+                Name: {
+                    title: 'Name',
+                    width: '23%'
+                },
+                //EmailAddress: {
+                //    title: 'Email address',
+                //    list: false
+                //},
+                RoleId: {
+                    title: 'Roles',
+                    width: '12%',
+                    options: '@Url.Action("GetRoles")'
+                },
+                Account: {
+                    title: 'Account',
+                    width: '23%'
+                },
+                //Gender: {
+                //    title: 'Gender',
+                //    width: '13%',
+                //    options: { 'M': 'Male', 'F': 'Female' }
+                //},
+                TotalExp: {
+                    title: 'Total Exp.',
+                    width: '12%'
+                },
+                Location: {
+                    title: 'Location',
+                    width: '15%'
+                }
+            }
+        });
+
+        //Load employee list from server
+        $('#EmployeeTableContainer').jtable('load');
+    });
+
+</script>

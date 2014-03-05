@@ -1,0 +1,36 @@
+﻿@model BenchRockers.Models.EmployeeSkills
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>EmployeeSkills</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Employee.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Skills.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Skills.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Rating)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Rating)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.EmpSkillId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
